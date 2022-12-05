@@ -1,0 +1,65 @@
+<h1>Le Routeur</h1>
+
+<section>
+  <h2>Installation</h2>
+
+  <h3>Déclarer ses routes</h3>
+  <p>Angular Router est configuré automatiquement lors de la création de l'application avec ng-new.</p>
+  <p>Il a besoin du module app-routing.module.ts, qui contient : </p>
+  <ul>
+    <li>Une liste de Routes. Les routes sont des objets qui contiennent :
+      <ul>
+        <li>Path : le chemin utilisé dans les liens et visible dans l'url. Celui ci n'a pas forcément de rapport avec le nom du composant.
+        Il peut intégrer un ou plusieurs paramètres, préfixé par : ( deux points )</li>
+        <li>Component : La classe du composant à charger avec cette route ( composant est à importer en haut du document )</li>
+        <li>Children : un tabeau de routes imbriquées</li>
+        <li>RedirectTo : permet de rediriger un path vers un autre chemin.</li>
+        <li>Title : le titre de la page</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>Afficher les routes</h3>
+
+  <p>Pour afficher les composants appelés par les routes, il faut mettre la balise <code>{{ '<' + 'router-outlet' + '>'}}</code>
+  dans le template de AppComposant.
+  </p>
+  <p>Pour afficher des routes imbriquées, il faut mettre un nouveau routeur outlet dans le composant parent.</p>
+
+
+</section>
+
+
+<section>
+  <h2>Les Routing Modules</h2>
+
+  <h3>Root</h3>
+  <p>Les fichiers de configuration pour les routes sont des modules Angular.</p>
+  <p>Ils importent [import] le module RouterModule, qui vient de @angular/router ( dans Node_Module ).</p>
+  <p>Le fichier de routes principal ( app-routing.module ) utilise la méthode forRoot() pour déclarer les routes
+  principales du projet ( celles des composants chargés dès le démarrage de l'application, déclarés dans AppModule ).</p>
+  <p>forRoot() prend en paramètre une liste d'objet "Route"</p>
+  <p>Il exporte ensuite RouterModule, désormais configuré.</p>
+  <p>AppModule importe AppRoutingModule, et donc, RouterModule ( puisqu'il est exporté ).</p>
+
+  <h3>Lazy Loading</h3>
+
+  <p>Par défaut, Angular charge tous les composants et autres éléments qui sont déclarés dans AppModule.</p>
+  <p>On peut créer des sous-modules, qui ne seront chargés que lorsqu'ils sont appelés.</p>
+
+  <p>Un module c'est un regroupement de fichiers ayant un même sujet, qui fonctionne ( idéalement ) de manière indépendante,
+  et qu'on peut importer ailleur pour l'utiliser.</p>
+
+  <p>Tous les modules ne sont pas en lazy loading, on peut avoir des modules qui se chargent en même temps que le reste
+  de l'application ( si ils sont importer [import] dans AppModule ). </p>
+
+  <p>Pour les charger de manière asynchrone, en lazy loading, on leur déclare une route, avec la syntaxe loadChildren.</p>
+  <p><code>{{"{path: 'admin', loadChildren: () => import('./pages/admin/admin.module').then(m => m.AdminModule)}"}}</code></p>
+  <p>Ils ne seront alors chargé que si on accède à cette route.</p>
+
+  <p>L'intérêt est d'optimiser le temps de chargement de l'application, notamment au 1er chargement.</p>
+  <p>L'inconvénient, c'est qu'on ajoute un petit temps de chargement supplémentaire au moment de charger le module.</p>
+
+</section>
+
+
