@@ -7,13 +7,19 @@ import {HighlightPlusModule} from "ngx-highlightjs/plus";
 import { SyntaxeComponent } from './pages/syntaxe/syntaxe.component';
 import { RouteurComponent } from './pages/routeur/routeur.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
+import { ParentComponent } from './pages/parent/parent.component';
+import { EnfantComponent } from './components/enfant/enfant.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SyntaxeComponent,
     RouteurComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    ParentComponent,
+    EnfantComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,
