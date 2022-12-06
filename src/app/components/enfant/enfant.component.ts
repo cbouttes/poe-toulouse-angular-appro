@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-enfant[produit]',
@@ -18,6 +18,9 @@ export class EnfantComponent implements OnInit {
 
   new_value: string = '';
 
+  @Output() update_event = new EventEmitter();
+
+
   constructor() {
     // this.produit = 'Valeur par défaut - solution 2';
   }
@@ -27,9 +30,13 @@ export class EnfantComponent implements OnInit {
       throw new Error("EnfantComponent requires an Input 'product' of type string");
     }
   }
+  askParentToUpdate() {
+    // Ah ne pas faire !!!!!
+    // -> L'enfant ne doit JAMAIS modifier lui même ses props
+    //this.produit = this.new_value;
 
-  update() {
-    this.produit = this.new_value;
+    //On envoie une demande au parent
+    this.update_event.emit(this.new_value);
   }
 
 

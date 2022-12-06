@@ -10,6 +10,7 @@ import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { ParentComponent } from './pages/parent/parent.component';
 import { EnfantComponent } from './components/enfant/enfant.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { CounterComponent } from './components/counter/counter.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     NotfoundComponent,
     ParentComponent,
     EnfantComponent,
-    NavigationComponent
+    NavigationComponent,
+    CounterComponent
   ],
   imports: [
     BrowserModule,

@@ -1,1 +1,78 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Imperial+Script&family=Inter&display=swap');
+
+:root {
+  --main : #F97068;
+  --main-glass: #F9706844;
+  --main-lighter: #FBB0B2;
+  --main-darker: #7A3133;
+  --secondary: #ffdf93;
+  --secondary-glass: rgba(255, 223, 147, 0.4);
+  --dark: #152328;
+  --shadow: rgba(43, 54, 56, 0.2);
+  --script: 'Imperial Script', cursive;
+  --main-font: "Inter", sans-serif;
+  --title-font: "Comfortaa", sans-serif;
+
+}
+
+body {
+  margin: 0;
+  font-family: var(--main-font);
+  color: var(--dark);
+}
+
+* { box-sizing: border-box}
+
+.centered, figure, main {
+  margin: auto;
+  width: 80%;
+}
+
+h1, h2, h3, .subtitle {
+  font-family: var(--title-font);
+}
+
+h1 {
+  font-size: 3em;
+  position: relative;
+  width: fit-content;
+  z-index: 2;
+  margin: 70px auto;
+  text-align: center;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  height: 40%;
+  width: 110%;
+  top: 65%;
+  left: -5%;
+  z-index: -1;
+  background-color: var(--secondary);
+  clip-path: polygon(0 0, 95% 0, 100% 100%, 5% 100%);
+}
+
+
+section {
+  padding: 35px;
+  box-shadow: 0 3px 12px var(--shadow);
+  border-radius: 8px;
+  margin: 50px 0 auto;
+}
+
+img {
+  width: 100%;
+}
+
+button {
+  background-color: var(--secondary);
+  border: solid black 2px;
+  padding: 10px 15px;
+  font-size: 1.2em;
+  border-radius: 5px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}

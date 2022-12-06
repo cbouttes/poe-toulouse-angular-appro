@@ -29,7 +29,7 @@
   de ce qu'elle contient ( il faut juste connaître son / ses types possible.</p>
 
   <p>Du côté du parent, on passe la valeur souhaité dans la balise du composant enfant, via un attribut de balise du
-    même nom que l'Input déclaré ( <code>{{ '<' + 'app-enfant ma_propriété="valeur"' + '>'}}</code></p>
+    même nom que l'Input déclaré ( <code>{{ '<' + 'app-enfant' + ' ma_propriété="valeur"' + '>'}}</code></p>
 
   <p>Cette propriété suit les mêmes règles que les autres attributs HTML : entourée de crochets [], elle interpréte du JS.</p>
 
@@ -48,11 +48,22 @@
   </p>
 
   <div class="grid">
+    <!--
     <app-enfant produit="Bottes à moumoute"></app-enfant>
     <app-enfant [produit]="pantoufle"></app-enfant>
-    <app-enfant *ngFor="let p of products" [produit]="p"></app-enfant>
-    <app-enfant produit="truc"></app-enfant>
+    -->
+    <app-enfant *ngFor="let p of products; let i = index;" [produit]="p" (update_event)="handleUpdateEvent($event, i)"></app-enfant>
   </div>
 
 
+</section>
+
+<section>
+  <h2>Compteur</h2>
+  <p><i>[parent] : Valeur de parent count {{parent_count}}</i></p>
+  <button (click)="plus()">[parent]</button>
+
+  <div class="grid">
+    <app-counter [count]="parent_count" (update_event)="updateCounter($event)"></app-counter>
+  </div>
 </section>
