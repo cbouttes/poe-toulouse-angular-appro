@@ -75,7 +75,11 @@
 
   <p>En appelant le Output du composant enfant en suivant la syntaxe nominputChange ( ici <i>countChange</i> ),
   on permet à Angular de gérer la modification des données de manière bidirectionnelle ( <b>Two Way Binding</b> ).</p>
-  <p>ça ne fonctionne pas dans une ngFor, ça ne fonctionne que quand l'input passé est directement la valeur enregistrée dans le parent.</p>
+  <p>ça ne fonctionne pas dans une ngFor,
+    ça ne fonctionne que quand l'input passé est directement la valeur enregistrée dans le parent.</p>
+
+  <p>Ce que fait Angular en arrière plan :</p>
+  <p>Variable passée en Input = $event de l'Output</p>
 
   <div class="grid">
     <app-counter-short [(count)]="parent_count_2" ></app-counter-short>

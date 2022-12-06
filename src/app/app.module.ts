@@ -12,6 +12,7 @@ import { EnfantComponent } from './components/enfant/enfant.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { CounterShortComponent } from './components/counter-short/counter-short.component';
+import { AboutServiceComponent } from './pages/about-service/about-service.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { CounterShortComponent } from './components/counter-short/counter-short.
     EnfantComponent,
     NavigationComponent,
     CounterComponent,
-    CounterShortComponent
+    CounterShortComponent,
+    AboutServiceComponent
   ],
   imports: [
     BrowserModule,
