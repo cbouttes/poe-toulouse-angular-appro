@@ -11,6 +11,8 @@ export class ParentComponent {
 
   parent_count = 0;
 
+  parent_count_2 = 0;
+
   // updateItem( new_valeur, index_a_modifier )
   handleUpdateEvent(value: string, index: number) {
     console.log(`[Parent] : On m'a parlé ?`, value);

@@ -11,6 +11,7 @@ import { ParentComponent } from './pages/parent/parent.component';
 import { EnfantComponent } from './components/enfant/enfant.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { CounterComponent } from './components/counter/counter.component';
+import { CounterShortComponent } from './components/counter-short/counter-short.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CounterComponent } from './components/counter/counter.component';
     ParentComponent,
     EnfantComponent,
     NavigationComponent,
-    CounterComponent
+    CounterComponent,
+    CounterShortComponent
   ],
   imports: [
     BrowserModule,

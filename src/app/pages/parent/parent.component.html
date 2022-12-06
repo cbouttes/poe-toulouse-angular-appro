@@ -67,3 +67,17 @@
     <app-counter [count]="parent_count" (update_event)="updateCounter($event)"></app-counter>
   </div>
 </section>
+
+
+<section>
+  <h2>Compteur en short 🩳 </h2>
+  <p><i>[parent] : Valeur de parent count {{parent_count_2}}</i></p>
+
+  <p>En appelant le Output du composant enfant en suivant la syntaxe nominputChange ( ici <i>countChange</i> ),
+  on permet à Angular de gérer la modification des données de manière bidirectionnelle ( <b>Two Way Binding</b> ).</p>
+  <p>ça ne fonctionne pas dans une ngFor, ça ne fonctionne que quand l'input passé est directement la valeur enregistrée dans le parent.</p>
+
+  <div class="grid">
+    <app-counter-short [(count)]="parent_count_2" ></app-counter-short>
+  </div>
+</section>
