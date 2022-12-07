@@ -1,4 +1,4 @@
-<h1>Syntaxe de template et directives</h1>
+<h1>Syntaxe de template</h1>
 
 <p>Ici, on peut mettre du HTML classique, mais également de l'interpolation, ou du data binding.</p>
 
@@ -135,9 +135,9 @@
     <p>Les événements Angular, ou personnalisés ( output ) peuvent retourner autre chose.</p>
 
     <p>
-      <code>
+      <app-code [code]="code_js">
         {{code_js}}
-      </code>
+      </app-code>
     </p>
     <input [value]="lastname" (input)="bindLastName($event)"/>
 
@@ -150,7 +150,7 @@
       et qui retourne la nouvelle valeur de l'input.</p>
 
     <p>
-      <code>{{code_angular}}</code>
+      <app-code [code]="code_angular">{{code_angular}}</app-code>
     </p>
     <input [ngModel]="name" (ngModelChange)="bindName($event)" />
     <p>Name : {{name}} {{lastname}}</p>
@@ -160,9 +160,9 @@
     <p>Ça permet de gérer à la fois la valeur de base de l'input, et la mise à jour de la variable associée.</p>
 
     <p>
-      <code>
+      <app-code [code]="code_angular_good">
         {{code_angular_good}}
-      </code>
+      </app-code>
     </p>
     <input [(ngModel)]="username"/>
     <p>Username : {{username}}</p>
@@ -203,12 +203,11 @@
   <p [class.red]="!is_logged">Classe conditionnelle</p>
 </section>
 
-
 <section>
-  <h4>NgStyle</h4>
+  <h2>NgStyle</h2>
 
-  <p>NgStyle prend en paramétre un objet Javascript, représentant le style.</p>
-  <p>On retrouve les mêmes propriétés qu'en CSS, attention cepedant : en CSS on utilise le kebab-case,
+  <p>NgStyle prend en paramètre un objet Javascript, représentant le style.</p>
+  <p>On retrouve les mêmes propriétés qu'en CSS, attention cependant : en CSS on utilise le kebab-case,
     en JS, on utilise le camelCase.
   </p>
   <p>Les valeurs sont à passer en string, comme des valeurs CSS valides.</p>

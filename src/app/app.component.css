@@ -1,0 +1,8 @@
+main {
+  min-height: calc(100vh - 80px );
+}
+
+footer {
+  padding: 50px auto;
+  text-align: center;
+}

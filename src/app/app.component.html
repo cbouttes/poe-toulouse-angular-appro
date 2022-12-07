@@ -1,8 +1,13 @@
-<app-navigation></app-navigation>
-<main>
-  <router-outlet></router-outlet>
+<div class="body" [class.dark]="is_dark">
+  <app-navigation [(isDark)]="is_dark"></app-navigation>
 
-</main>
-<footer>
-  Formation Angular Approfondissement |  Dawan 2022
-</footer>
+  <main>
+    <router-outlet></router-outlet>
+
+  </main>
+  <footer>
+    Formation Angular Approfondissement |  Dawan 2022
+  </footer>
+  <app-toast></app-toast>
+</div>
+

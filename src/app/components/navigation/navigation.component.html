@@ -1,5 +1,8 @@
 <nav>
-  <ul>
+  <button class="menu-btn" (click)="is_open=!is_open">
+    <span class="material-icons">{{!is_open? 'menu' : 'close'}}</span>
+  </button>
+  <ul class="nav-list" [class.closed]="!is_open">
     <li>
       <a routerLink="/">Syntaxe</a>
     </li>
@@ -14,6 +17,28 @@
     </li>
     <li>
       <a routerLink="/admin">Admin</a>
+    </li>
+    <li class="dropdown-link">
+      <span class="link">
+        Personnalisation
+        <span class="material-icons">expand_more</span>
+      </span>
+      <ul class="dropdown">
+        <li>
+          <label for="theme">Thème code</label>
+          <select id="theme" [(ngModel)]="chosen_theme">
+            <option *ngFor="let t of themes" [value]="t" (click)="setTheme()">{{t | titlecase}}</option>
+          </select>
+        </li>
+        <li> Mode Sombre :
+          <button title="mode sombre" class="toggle" (click)="toggle()" [class.on]="isDark">
+        <span class="material-icons">
+          {{isDark? 'dark_mode' : 'light_mode'}}
+        </span>
+          </button>
+        </li>
+      </ul>
+
     </li>
 
   </ul>
