@@ -27,4 +27,7 @@
   <h2>Todos</h2>
 
   <p>Ici, les todos</p>
+  <article *ngFor="let todo of todos" class="card">
+    <h3>{{todo.title}}</h3>
+  </article>
 </section>
