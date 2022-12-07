@@ -16,6 +16,7 @@ import { ToastComponent } from './components/toast/toast.component';
 import { IconPipe } from './utils/pipes/icon.pipe';
 import { CodeComponent } from './components/code/code.component';
 import {HIGHLIGHT_OPTIONS, HighlightModule} from "ngx-highlightjs";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import {HIGHLIGHT_OPTIONS, HighlightModule} from "ngx-highlightjs";
     AppRoutingModule,
     FormsModule,
     HighlightModule,
+    HttpClientModule
   ],
   providers: [
    {

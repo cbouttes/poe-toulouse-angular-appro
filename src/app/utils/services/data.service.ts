@@ -5,13 +5,21 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
 
-  data = 'Hello World';
+  data? = 'Hello World';
   constructor() { }
 
 
   updateData(new_value: string) {
     this.data = new_value;
     console.log('[DataService] Data = ', this.data);
+  }
+
+  getData() {
+    return this.data;
+  }
+
+  deleteData() {
+    this.data = undefined;
   }
 
 }

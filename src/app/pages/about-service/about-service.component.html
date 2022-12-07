@@ -7,4 +7,24 @@
   <p>
     <button (click)="update()">Update Data</button>
   </p>
+
+</section>
+
+<section>
+  <h2>Users</h2>
+
+  <div class="grid">
+    <article *ngFor="let u of users" class="card">
+      <h3>{{u.name}}</h3>
+      <p>{{u.email}}</p>
+    </article>
+  </div>
+
+</section>
+
+
+<section>
+  <h2>Todos</h2>
+
+  <p>Ici, les todos</p>
 </section>

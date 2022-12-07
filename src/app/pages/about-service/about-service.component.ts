@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from "../../utils/services/data.service";
+import {UserService} from "../../utils/services/user.service";
+import {User} from "../../utils/models/User";
 
 @Component({
   selector: 'app-about-service',
@@ -8,12 +10,15 @@ import {DataService} from "../../utils/services/data.service";
 })
 export class AboutServiceComponent implements OnInit {
   message?: string;
+  users: User[] = [];
 
-  constructor(private dataService: DataService) {}
+  constructor(private dataService: DataService, private userService: UserService) {}
 
   ngOnInit(): void {
     this.message = this.dataService.data;
     // message prend la valeur de data au moment de l'initialisation du composant
+
+    this.userService.getUsers().subscribe(res => this.users = res);
   }
 
   update() {
